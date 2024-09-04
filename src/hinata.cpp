@@ -28,6 +28,11 @@ Hinata::Hinata(QWidget *parent)
     screen_available_x_ = QGuiApplication::primaryScreen()->availableGeometry().width();
     screen_available_y_ = QGuiApplication::primaryScreen()->availableGeometry().height();
 
+    // 将窗口移动到屏幕中心
+    int x = (screen_available_x_ - width()) / 2;
+    int y = (screen_available_y_ - height()) / 2;
+    move(x, y);
+
     can_be_down_ = frameGeometry().y() < screen_available_y_ - height();
 }
 
